@@ -32,4 +32,12 @@ Deck.prototype.createElement = function(location){
 	$(location).append('<button id="'+deck.name+'">'+deck.name+'</button>');
 }
 
+Deck.prototype.addCard = function(card){
+	deck = this;
+	deck.cards.push(card);
+}
 
+Deck.prototype.drawCard = function(){
+	deck = this;
+	return deck.cards.pop();
+}

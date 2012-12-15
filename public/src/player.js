@@ -18,3 +18,15 @@ Player.prototype.drawHand = function(numberOfCards){
 		player.hand.push(player.deck.pop());
 	}
 }
+
+Player.prototype.getDiscard = function(){
+	return this.discard;
+}
+
+Player.prototype.getDeck = function(){
+	return this.deck;
+}
+
+Player.prototype.getHand = function(){
+	return this.hand;
+}

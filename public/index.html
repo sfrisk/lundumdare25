@@ -11,9 +11,6 @@
 		<script type="text/javascript">
 		$(document).ready(function(){
 			var game = new Game("deck.json", 3);
-			$("#decks").on("click", "button", function(event){
-				game.getDeckByName($(this).attr('id'));
-			})
 		})
 			
 
