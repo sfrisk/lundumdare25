@@ -22,7 +22,8 @@ Game.prototype.start = function(){
 	});
 
 	$("#PlayerDraw").on("click",  function(event){
-		game.player.drawHand(3);
+		game.player.discardHand();
+		game.player.drawHand(4);
 	});
 }
 

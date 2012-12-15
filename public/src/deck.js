@@ -41,3 +41,10 @@ Deck.prototype.drawCard = function(){
 	deck = this;
 	return deck.cards.pop();
 }
+
+Deck.prototype.paintDeck = function(location){
+	deck=this;
+	for(var i =0; i < deck.cards.length; i++){
+		deck.cards[i].paintCard(location);
+	}
+}

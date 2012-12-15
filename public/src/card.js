@@ -22,6 +22,12 @@ Card.prototype.loadCard = function(id, name, tech, money, power, image, techCost
 	this.slug = slug;
 }
 
+Card.prototype.paintCard = function(location){
+	card = this;
+	html = '<div id="'+card.slug+'" class="playerCard"><h2>'+card.name+'</h2></div>';
+	$(location).append(html);
+}
+
 Card.prototype.setId = function(id){
 	this.id = id;
 }

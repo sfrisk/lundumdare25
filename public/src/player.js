@@ -14,11 +14,18 @@ Player.prototype.shuffleDiscard = function(){
 
 }
 
+Player.prototype.discardHand = function(){
+	player = this;
+	length = player.hand.cards.length
+	for(var i = 0; i < length; i++){
+		player.discard.addCard(player.hand.drawCard());
+	}
+}
+
 Player.prototype.drawHand = function(numberOfCards){
 	player = this;
 
 	for(var i = 0; i < numberOfCards; i++){
-		console.log(player.deck.cards.length);
 		if(player.deck.cards.length > 0){
 			player.hand.addCard(player.deck.drawCard());
 		}
@@ -28,8 +35,16 @@ Player.prototype.drawHand = function(numberOfCards){
 		}
 		
 	}
-	console.log(player);
+	player.paintHand();
 	
+}
+
+Player.prototype.paintHand = function(){
+	$('#player #hand').empty();
+	player.hand.paintDeck('#player #hand');
+
+
+
 }
 
 Player.prototype.getDiscard = function(){
