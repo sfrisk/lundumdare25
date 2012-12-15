@@ -1,17 +1,27 @@
 function Game(deckSrc, numberOfPlayers){
 	this.decks = [];
-	this.numberOfPlayers = 0;
-
+	this.numberOfPlayers = numberOfPlayers;
 	this.loadDecks(deckSrc);
-
 	console.log(this);
+	
+	
 }
 
+Game.prototype.shuffleDecks = function (decks){
+	game = this;
+	for(var i = 0; i < decks.length; i++){
+		game.decks[i].shuffleDeck();
+	}
+}
+
+Game.prototype.getDecks = function(){
+	return this.decks;
+}
 
 
 Game.prototype.loadDecks = function(deckSrc){
 	var game = this;
-	var deck = this.deck;
+	var decks = [];
 	i = 0;
 	$.getJSON(deckSrc, function (data){
 		$.each(data, function(name, subdeck){
@@ -38,8 +48,14 @@ Game.prototype.loadDecks = function(deckSrc){
 					i++;
 				}
 			});
-			game.decks.push(d);
+
+			decks.push(d);
+		
 
 		});
+		game.decks = decks;
+		game.shuffleDecks(game.decks);
 	});
+	
+	
 }
