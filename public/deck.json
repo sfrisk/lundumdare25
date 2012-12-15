@@ -1,0 +1,35 @@
+
+{
+	"cards":[
+		{
+			"name": "Fake Card Name",
+			"tech": 2,
+			"money": 5,
+			"power": 1,
+			"techCost": 7,
+			"moneyCost": 0,
+			"image": "",
+			"numberOfCards": 10
+		},
+		{
+			"name": "Lurking Meep",
+			"tech": 1,
+			"money": 10,
+			"power": 2,
+			"techCost": 7,
+			"moneyCost": 0,
+			"image": "",
+			"numberOfCards": 10
+		},
+		{
+			"name": "Evil Cat",
+			"tech": 4,
+			"money": 2,
+			"power": 1,
+			"techCost": 8,
+			"moneyCost": 0,
+			"image": "",
+			"numberOfCards": 1
+		}
+	]
+}
