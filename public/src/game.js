@@ -1,10 +1,19 @@
 function Game(deckSrc, numberOfPlayers){
+	game = this;
 	this.decks = [];
+	this.discard = [];
 	this.numberOfPlayers = numberOfPlayers;
 	this.loadDecks(deckSrc);
-	console.log(this);
-	
-	
+
+	this.player = new Player();
+
+
+
+
+	$("#decks").on("click", "button", function(event){
+		console.log(game.getDeckByName($(this).attr('id')));
+
+	});
 }
 
 Game.prototype.shuffleDecks = function (decks){
@@ -13,11 +22,6 @@ Game.prototype.shuffleDecks = function (decks){
 		game.decks[i].shuffleDeck();
 	}
 }
-
-Game.prototype.getDecks = function(){
-	return this.decks;
-}
-
 
 Game.prototype.loadDecks = function(deckSrc){
 	var game = this;
@@ -54,8 +58,34 @@ Game.prototype.loadDecks = function(deckSrc){
 
 		});
 		game.decks = decks;
-		game.shuffleDecks(game.decks);
-	});
-	
-	
+		game.start();
+	});	
+}
+
+Game.prototype.start = function(){
+	game = this;
+	game.shuffleDecks(game.decks);
+	game.drawDecks();
+	console.log(game);
+}
+
+Game.prototype.drawDecks = function(){
+	game = this;
+	for(var i = 0; i < game.decks.length; i++){
+		game.decks[i].createElement('#decks');
+	}
+}
+
+
+Game.prototype.getDeckByName = function(name){
+	game = this;
+	for(var i = 0; i < game.decks.length; i++){
+		if(game.decks[i].getName() == name){
+			return game.decks[i];
+		}
+	}
+}
+
+Game.prototype.getDecks = function(){
+	return this.decks;
 }

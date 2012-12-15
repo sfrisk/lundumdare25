@@ -5,13 +5,30 @@
 		<script src="src/card.js" type="text/javascript"></script>
 		<script src="src/deck.js" type="text/javascript"></script>
 		<script src="src/game.js" type="text/javascript"></script>
+		<script src="src/player.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<script type="text/javascript">
+		$(document).ready(function(){
 			var game = new Game("deck.json", 3);
+			$("#decks").on("click", "button", function(event){
+				game.getDeckByName($(this).attr('id'));
+			})
+		})
+			
 
 		</script>
 
+
+		<div id="decks">
+
+
+		</div>
+
+		<div id="player">
+			<button id="PlayerDraw">Draw Cards</button>
+
+		</div>
 
 
 	</body>
