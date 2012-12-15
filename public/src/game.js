@@ -7,19 +7,23 @@ function Game(deckSrc, numberOfPlayers){
 
 	this.player = new Player();
 
-
-
-
-	$("#decks").on("click", "button", function(event){
-		deck = game.getDeckByName($(this).attr('id'));
-		game.drawCard(deck, game.player.getDiscard());
-	});
 }
+
 
 Game.prototype.start = function(){
 	game = this;
 	game.shuffleDecks(game.decks);
 	game.paintDecks();
+
+
+	$("#decks").on("click", "button", function(event){
+		deck = game.getDeckByName($(this).attr('id'));
+		game.drawCard(deck, game.player.discard);
+	});
+
+	$("#PlayerDraw").on("click",  function(event){
+		game.player.drawHand(3);
+	});
 }
 
 Game.prototype.shuffleDecks = function (decks){
@@ -78,8 +82,6 @@ Game.prototype.paintDecks = function(){
 
 Game.prototype.drawCard = function(firstdeck, seconddeck){
 	seconddeck.addCard(firstdeck.drawCard());
-	console.log(firstdeck);
-	console.log(seconddeck);
 }
 
 

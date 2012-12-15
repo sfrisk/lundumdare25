@@ -7,16 +7,29 @@ function Player(){
 
 
 Player.prototype.shuffleDiscard = function(){
+
 	this.discard.shuffleDeck();
 	this.deck.setCards(this.discard.getCards());
 	this.discard.setCards(new Array());
+
 }
 
 Player.prototype.drawHand = function(numberOfCards){
 	player = this;
+
 	for(var i = 0; i < numberOfCards; i++){
-		player.hand.push(player.deck.pop());
+		console.log(player.deck.cards.length);
+		if(player.deck.cards.length > 0){
+			player.hand.addCard(player.deck.drawCard());
+		}
+		else{
+			player.shuffleDiscard();
+			player.hand.addCard(player.deck.drawCard());
+		}
+		
 	}
+	console.log(player);
+	
 }
 
 Player.prototype.getDiscard = function(){
