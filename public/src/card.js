@@ -1,5 +1,6 @@
 function Card(){
 	this.id = null;
+	this.slug = "";
 	this.name = "";
 	this.tech = null
 	this.money = null;
@@ -9,7 +10,7 @@ function Card(){
 	this.image = "";
 }
 
-Card.prototype.loadCard = function(id, name, tech, money, power, image, techCost, moneyCost){
+Card.prototype.loadCard = function(id, name, tech, money, power, image, techCost, moneyCost, slug){
 	this.id = id;
 	this.name = name;
 	this.tech = tech;
@@ -18,6 +19,7 @@ Card.prototype.loadCard = function(id, name, tech, money, power, image, techCost
 	this.image = image;
 	this.techCost = techCost;
 	this.moneyCost = moneyCost;
+	this.slug = slug;
 }
 
 Card.prototype.setId = function(id){

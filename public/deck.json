@@ -1,6 +1,6 @@
 
 {
-	"cards":[
+	"Fake Cards":[
 		{
 			"name": "Fake Card Name",
 			"tech": 2,
@@ -9,8 +9,11 @@
 			"techCost": 7,
 			"moneyCost": 0,
 			"image": "",
-			"numberOfCards": 10
-		},
+			"numberOfCards": 10,
+			"slug": "fake-card-name"
+		}
+	],
+	"Meepers":[
 		{
 			"name": "Lurking Meep",
 			"tech": 1,
@@ -19,17 +22,46 @@
 			"techCost": 7,
 			"moneyCost": 0,
 			"image": "",
-			"numberOfCards": 10
-		},
+			"numberOfCards": 10,
+			"slug": "lurking-meep"
+		}
+	],
+	"Minions":[
 		{
-			"name": "Evil Cat",
-			"tech": 4,
-			"money": 2,
-			"power": 1,
-			"techCost": 8,
+			"name": "Minion One",
+			"tech": 1,
+			"money": 10,
+			"power": 2,
+			"techCost": 7,
 			"moneyCost": 0,
 			"image": "",
-			"numberOfCards": 1
+			"numberOfCards": 1,
+			"slug": "minion-one"
+		},
+		{
+			"name": "Minion Two",
+			"tech": 1,
+			"money": 3,
+			"power": 1,
+			"techCost": 7,
+			"moneyCost": 0,
+			"image": "",
+			"numberOfCards": 1,
+			"slug": "minion-two"
+		},
+		{
+			"name": "Minion Three",
+			"tech": 1,
+			"money": 3,
+			"power": 1,
+			"techCost": 3,
+			"moneyCost": 9,
+			"image": "",
+			"numberOfCards": 1,
+			"slug": "minion-three"
 		}
 	]
+
+		
+	
 }
