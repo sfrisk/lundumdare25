@@ -39,12 +39,19 @@ Player.prototype.drawHand = function(numberOfCards){
 	
 }
 
+Player.prototype.getHandStats = function(){
+	player = this;
+	power = player.hand.getPower();
+	tech = player.hand.getTech();
+	money = player.hand.getMoney();
+	$("#power span").html(power);
+	$("#tech span").html(tech);
+	$("#money span").html(money);
+}
+
 Player.prototype.paintHand = function(){
 	$('#player #hand').empty();
 	player.hand.paintDeck('#player #hand');
-
-
-
 }
 
 Player.prototype.getDiscard = function(){

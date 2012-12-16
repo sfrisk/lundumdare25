@@ -16,7 +16,7 @@ Game.prototype.start = function(){
 	game.paintDecks();
 
 
-	$("#decks").on("click", "button", function(event){
+	$("#decks").on("click", ".playingCard", function(event){
 		deck = game.getDeckByName($(this).attr('id'));
 		game.drawCard(deck, game.player.discard);
 	});
@@ -24,6 +24,7 @@ Game.prototype.start = function(){
 	$("#PlayerDraw").on("click",  function(event){
 		game.player.discardHand();
 		game.player.drawHand(4);
+		game.player.getHandStats();
 	});
 }
 
@@ -50,6 +51,7 @@ Game.prototype.loadDecks = function(deckSrc){
 					for(count = 0; count < card.numberOfCards; count ++){
 						slug = card.slug + "-" + i;
 						c = new Card();
+
 						c.loadCard(i, card.name, card.tech, card.money, card.power, card.image, card.techCost, card.moneyCost, slug);
 						d.cards.push(c);
 						i ++;
@@ -77,7 +79,7 @@ Game.prototype.loadDecks = function(deckSrc){
 Game.prototype.paintDecks = function(){
 	game = this;
 	for(var i = 0; i < game.decks.length; i++){
-		game.decks[i].createElement('#decks');
+		game.decks[i].paintTopCard('#decks');
 	}
 }
 

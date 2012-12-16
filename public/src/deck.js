@@ -4,6 +4,33 @@ function Deck(name){
 	this.name = name;
 }
 
+Deck.prototype.getPower = function(){
+	var power = 0;
+	deck = this;
+	for(var i = 0; i < deck.cards.length; i++){
+		power += deck.cards[i].getPower();
+	}
+	return power;
+}
+
+Deck.prototype.getTech = function(){
+	var tech = 0;
+	deck = this;
+	for(var i = 0; i < deck.cards.length; i++){
+		tech += deck.cards[i].getTech();
+	}
+	return tech;
+}
+
+Deck.prototype.getMoney = function(){
+	var money = 0;
+	deck = this;
+	for(var i = 0; i < deck.cards.length; i++){
+		money += deck.cards[i].getMoney();
+	}
+	return money;
+}
+
 Deck.prototype.setName = function(name){
 	this.name = name;
 }
@@ -27,9 +54,9 @@ Deck.prototype.shuffleDeck = function(){
 
 } 
 
-Deck.prototype.createElement = function(location){
+Deck.prototype.paintTopCard = function(location){
 	deck = this;
-	$(location).append('<button id="'+deck.name+'">'+deck.name+'</button>');
+	deck.cards[0].paintCard(location, deck.name);
 }
 
 Deck.prototype.addCard = function(card){

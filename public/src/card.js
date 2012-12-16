@@ -22,9 +22,10 @@ Card.prototype.loadCard = function(id, name, tech, money, power, image, techCost
 	this.slug = slug;
 }
 
-Card.prototype.paintCard = function(location){
+Card.prototype.paintCard = function(location, deckName){
 	card = this;
-	html = '<div id="'+card.slug+'" class="playerCard"><h2>'+card.name+'</h2></div>';
+	if(typeof(deckName)==='undefined') deckName = card.slug;
+	html = '<div id="'+deckName+'" class="playingCard"><h2>'+card.name+'</h2><img src="images/starwars.jpg"><div class="description"><p>+ <span class="tech">'+card.tech+'</span></p><p>+ <span class="money">'+card.money+'</span></p><p>+ <span class="power">'+card.power+'</span></p></div><div class="techCost">'+card.techCost+'</div><div class="moneyCost">'+card.moneyCost+'</div></div>';
 	$(location).append(html);
 }
 
