@@ -3,7 +3,7 @@
 	
 	"Tech":[
 		{
-			"name": "Tech Credits",
+			"name": "Tech Credit",
 			"tech": 3,
 			"money": 0,
 			"power": 0,
@@ -16,7 +16,7 @@
 	],
 	"Money":[
 		{
-			"name": "Money Credits",
+			"name": "Money Credit",
 			"tech": 0,
 			"money": 3,
 			"power": 0,
@@ -37,7 +37,7 @@
 			"moneyCost": 3,
 			"image": "",
 			"numberOfCards": 20,
-			"slug": "money"
+			"slug": "power1"
 		}
 	],
 	"Power2":[
@@ -50,7 +50,7 @@
 			"moneyCost": 5,
 			"image": "",
 			"numberOfCards": 20,
-			"slug": "money"
+			"slug": "power2"
 		}
 	],
 	"Power3":[
@@ -63,7 +63,7 @@
 			"moneyCost": 7,
 			"image": "",
 			"numberOfCards": 20,
-			"slug": "money"
+			"slug": "power3"
 		}
 	]
 		

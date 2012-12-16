@@ -31,6 +31,10 @@ Deck.prototype.getMoney = function(){
 	return money;
 }
 
+Deck.prototype.getTop = function(){
+	return this.cards[0];
+}
+
 Deck.prototype.setName = function(name){
 	this.name = name;
 }
@@ -56,7 +60,7 @@ Deck.prototype.shuffleDeck = function(){
 
 Deck.prototype.paintTopCard = function(location){
 	deck = this;
-	deck.cards[0].paintCard(location, deck.name);
+	deck.cards[0].paintCard(location, deck.name+"-deck");
 }
 
 Deck.prototype.addCard = function(card){
