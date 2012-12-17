@@ -75,8 +75,8 @@ Player.prototype.getHandStats = function(){
 }
 
 Player.prototype.paintHand = function(){
-	$('#player #hand').empty();
-	player.hand.paintDeck('#player #hand');
+	$('#hand .readout').empty();
+	player.hand.paintDeck('#hand .readout');
 }
 
 Player.prototype.getState = function(){

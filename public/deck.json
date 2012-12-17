@@ -29,7 +29,7 @@
 	],
 	"Power1":[
 		{
-			"name": "Power Level One",
+			"name": "Power Level 1",
 			"tech": 0,
 			"money": 0,
 			"power": 1,
@@ -42,7 +42,7 @@
 	],
 	"Power2":[
 		{
-			"name": "Power Level Two",
+			"name": "Power Level 2",
 			"tech": 0,
 			"money": 0,
 			"power": 2,
@@ -55,7 +55,7 @@
 	],
 	"Power3":[
 		{
-			"name": "Power Level Three",
+			"name": "Power Level 3",
 			"tech": 0,
 			"money": 0,
 			"power": 3,

@@ -24,10 +24,9 @@ Card.prototype.loadCard = function(id, name, tech, money, power, image, techCost
 
 Card.prototype.paintCard = function(location, deckName){
 	card = this;
-	console.log(card);
-	console.log("paint Card");
 	if(typeof(deckName)==='undefined') deckName = card.slug;
-	html = '<div id="'+deckName+'" class="playingCard"><h2>'+card.name+'</h2><img src="images/starwars.jpg"><div class="description"><p>+ <span class="tech">'+card.tech+'</span></p><p>+ <span class="money">'+card.money+'</span></p><p>+ <span class="power">'+card.power+'</span></p></div><div class="techCost">'+card.techCost+'</div><div class="moneyCost">'+card.moneyCost+'</div></div>';
+	 html = '<div id="'+deckName+'" class="asset"><h3>'+card.name+'</h3><div class="assets-gained"><strong>Assets Gained</strong><br /><span class="tech"><strong>Tech:</strong> '+card.tech+'</span><br /><span class="money"><strong>Financial:</strong> '+card.money+'</span><br /><span class="power"><strong>Influence:</strong> '+card.power+'</span> </div><div class="asset-cost"><strong>Cost</strong><br /><span class="techCost"><strong>Tech:</strong> '+card.techCost+'</span><br /><span class="moneyCost"><strong>Financial</strong> '+card.moneyCost+'</span></div>';
+	// html = '<div id="'+deckName+'" class="playingCard"><h2>'+card.name+'</h2><img src="images/starwars.jpg"><div class="description"><p><span class="tech">+'+card.tech+'</span> <span class="money">+'+card.money+'</span> <span class="power">+'+card.power+'</span></p></div><div class="techCost">'+card.techCost+'</div><div class="moneyCost">'+card.moneyCost+'</div></div>';
 	$(location).append(html);
 }
 
